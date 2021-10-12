@@ -1,15 +1,11 @@
-#primary_nav_wrap
-{
-	margin-top:15px
-}
-
 #primary_nav_wrap ul
 {
 	list-style:none;
 	position:relative;
 	float:left;
 	margin:0;
-	padding:0
+	padding:0;
+	background-color: white;
 }
 
 #primary_nav_wrap ul a
@@ -73,12 +69,8 @@
     cursor: pointer;
 }
 
-.primary{
-	background-color: blue;
-	color: white ;
+#primary_nav_wrap .normal{
+	color: black;
 	padding: 5px 10px  !important;
 	cursor: pointer;
-}
-.primary:hover{
-	color: black !important;
 }

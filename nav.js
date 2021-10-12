@@ -1,29 +1,9 @@
-const LOCALSTORAGE_KEY="ANIME_LIST";
 const NAV_ID = "primary_nav_wrap";
 
 
-
-function getData(){
-    let value = localStorage.getItem(LOCALSTORAGE_KEY);
-    return JSON.parse(value);
-}
-
-function saveData(list){
-    localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(list));
-}
-
-function removeFromList(i){
-    let animeList = getData();
-    animeList.splice(i, 1);
-    saveData(animeList);
-    showRow();
-}
-
-
 function createOpcions(index){
-
     let li = document.createElement("li");
-    li.onclick = () => {removeFromList(index)};
+    li.onclick = () => { removeFromList(index)};
     li.textContent ="Borrau";
     const ul = document.createElement("ul");
     ul.append(li);
@@ -34,12 +14,9 @@ function createRow(animeList){
     
 
     const ul = document.createElement("ul");
-
     let li = document.createElement("li");
-    li.onclick = () => {addNew()};
-    li.textContent ="Berrixe";
-    li.classList.add("primary");
-
+    li.textContent ="Atzena ikusittekuk:";
+    li.classList.add("normal");
     ul.append(li);
 
     animeList.forEach((anime, index) => {
@@ -82,18 +59,6 @@ function resetNav(){
 }
 
 
-function addNew(){
-    let name = window.prompt("Anime izena?");
-    let link = window.prompt("URL?", window.location.href);
-    if (name && link){
-        let animeList = getData();
-        animeList.push({name, link});
-        saveData(animeList);
-        showRow();
-    }
-
-   
-}
 
 
 showRow();
