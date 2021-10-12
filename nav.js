@@ -1,13 +1,35 @@
 const NAV_ID = "primary_nav_wrap";
 
 
-function createOpcions(index){
+function createOpcions(index, nextEpisodeLink){
+    let nextButton = createNextButton(nextEpisodeLink);
+    let deleteButton = createDeleteButton(index);
+    
+    const ul = document.createElement("ul");
+    ul.append(nextButton);
+    ul.append(deleteButton);
+    return ul;
+}
+
+
+function createNextButton(nextEpisodeLink){
+    let a = document.createElement("a");
+    a.href = nextEpisodeLink;
+    a.textContent = "Hurrena";
+    
+    let li = document.createElement("li");
+    li.append(a);
+    return li;
+}
+
+function createDeleteButton(index){
+    let a = document.createElement("a");
+    a.textContent = "Borrau";
+
     let li = document.createElement("li");
     li.onclick = () => { removeFromList(index)};
-    li.textContent ="Borrau";
-    const ul = document.createElement("ul");
-    ul.append(li);
-    return ul;
+    li.append(a);
+    return li;
 }
 
 function createRow(animeList){
@@ -25,7 +47,7 @@ function createRow(animeList){
         a.href = anime.link;
         a.textContent = anime.name;
 
-        let opciones = createOpcions(index);
+        let opciones = createOpcions(index, anime.nextLink);
 
         let li = document.createElement("li");
         li.append(a);

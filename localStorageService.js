@@ -9,12 +9,13 @@ function saveData(list){
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(list));
 }
 
-function addNew(name, link){
+function addNew(name, link, nextLink){
     if (name && link){
         let animeList = getData();
         animeList.unshift({
             name: name,
-            link: link
+            link: link,
+            nextLink: nextLink
         });
         saveData(animeList);
         showRow();

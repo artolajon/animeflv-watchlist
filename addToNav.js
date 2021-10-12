@@ -10,6 +10,9 @@ let index = urlWithoutDomain.lastIndexOf("-");
 
 anime = urlWithoutDomain.substr(0, index);
 
+let episode = parseInt(urlWithoutDomain.substr(index+1));
+let nextLink = domain+anime+"-"+(episode+1); 
+
 anime = anime.replaceAll("-", " ");
 
 
@@ -17,5 +20,5 @@ anime = anime.replaceAll("-", " ");
 deleteIfExists(anime);
     
 //add new
-addNew(anime, url);
+addNew(anime, url, nextLink);
 
