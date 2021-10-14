@@ -1,8 +1,8 @@
-const NAV_ID = "primary_nav_wrap";
 
 
-function createOpcions(index, nextEpisodeLink){
-    let nextButton = createNextButton(nextEpisodeLink);
+
+function createOpcions(index, nextEpisodeLink, episode){
+    let nextButton = createNextButton(nextEpisodeLink, episode);
     let deleteButton = createDeleteButton(index);
     
     const ul = document.createElement("ul");
@@ -12,10 +12,10 @@ function createOpcions(index, nextEpisodeLink){
 }
 
 
-function createNextButton(nextEpisodeLink){
+function createNextButton(nextEpisodeLink, episode){
     let a = document.createElement("a");
-    a.href = nextEpisodeLink;
-    a.textContent = "Hurrena";
+    a.href = DOMAIN + nextEpisodeLink;
+    a.textContent = `Hurrena ${episode+1} =>`;
     
     let li = document.createElement("li");
     li.append(a);
@@ -44,10 +44,10 @@ function createRow(animeList){
     animeList.forEach((anime, index) => {
 
         let a = document.createElement("a");
-        a.href = anime.link;
-        a.textContent = anime.name;
+        a.href = DOMAIN + anime.link;
+        a.textContent = `${anime.name} - ${anime.episode}`;
 
-        let opciones = createOpcions(index, anime.nextLink);
+        let opciones = createOpcions(index, anime.nextLink, episode);
 
         let li = document.createElement("li");
         li.append(a);
@@ -58,7 +58,7 @@ function createRow(animeList){
 
 
     const nav = document.createElement("nav");
-    nav.id=NAV_ID;
+    nav.id=HTML_NAV_ID;
     nav.append(ul);
 
     return nav;
@@ -76,7 +76,7 @@ function showRow(){
 }
 
 function resetNav(){
-    let nav = document.getElementById(NAV_ID);
+    let nav = document.getElementById(HTML_NAV_ID);
     if (nav) nav.remove();
 }
 

@@ -1,5 +1,3 @@
-const LOCALSTORAGE_KEY="ANIME_LIST";
-
 function getData(){
     let value = localStorage.getItem(LOCALSTORAGE_KEY);
     return JSON.parse(value);
@@ -9,11 +7,12 @@ function saveData(list){
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(list));
 }
 
-function addNew(name, link, nextLink){
+function addNew(name, episode, link, nextLink){
     if (name && link){
         let animeList = getData();
         animeList.unshift({
             name: name,
+            episode: episode,
             link: link,
             nextLink: nextLink
         });

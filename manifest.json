@@ -7,11 +7,19 @@
         {
           "matches": ["https://www3.animeflv.net/*"],
           "css": ["nav.css"],
-          "js": ["localStorageService.js", "nav.js"]
+          "js": [
+            "constants.js",
+            "localStorageService.js", 
+            "nav.js"
+          ]
         },
         {
           "matches": ["https://www3.animeflv.net/ver/*"],
-          "js":["localStorageService.js", "addToNav.js"]
+          "js":[
+            "constants.js",
+            "localStorageService.js", 
+            "addToNav.js"
+          ]
         }
     ]
 }
