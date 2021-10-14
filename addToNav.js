@@ -15,10 +15,14 @@ let nextLink = domain+anime+"-"+(episode+1);
 
 anime = anime.replaceAll("-", " ");
 
+let tenMinutes = 1000 * 60 * 5;
 
-//exists?
-deleteIfExists(anime);
-    
-//add new
-addNew(anime, url, nextLink);
+setTimeout(()=>{
+    //exists?
+    deleteIfExists(anime);
+        
+    //add new
+    addNew(anime, url, nextLink);
+}, tenMinutes);
+
 
