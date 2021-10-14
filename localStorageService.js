@@ -1,5 +1,6 @@
 function getData(){
     let value = localStorage.getItem(LOCALSTORAGE_KEY);
+    if (!value) value = "[]";
     return JSON.parse(value);
 }
 

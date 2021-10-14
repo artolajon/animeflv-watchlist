@@ -47,7 +47,7 @@ function createRow(animeList){
         a.href = DOMAIN + anime.link;
         a.textContent = `${anime.name} - ${anime.episode}`;
 
-        let opciones = createOpcions(index, anime.nextLink, episode);
+        let opciones = createOpcions(index, anime.nextLink, anime.episode);
 
         let li = document.createElement("li");
         li.append(a);
