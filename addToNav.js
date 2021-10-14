@@ -14,7 +14,6 @@ let nextLink = anime+"-"+(episode+1);
 
 anime = anime.replaceAll("-", " ");
 
-let tenMinutes = 1000 * 60 * 5;
 
 setTimeout(()=>{
     //exists?
@@ -22,6 +21,6 @@ setTimeout(()=>{
         
     //add new
     addNew(anime, episode, urlWithoutDomain, nextLink);
-}, tenMinutes);
+}, TIMEOUT_BEFORE_SAVING);
 
 
