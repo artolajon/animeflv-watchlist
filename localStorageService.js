@@ -1,11 +1,11 @@
 function getData(){
-    let value = localStorage.getItem(LOCALSTORAGE_KEY);
+    let value = localStorage.getItem(LOCALSTORAGE_LIST_KEY);
     if (!value) value = "[]";
     return JSON.parse(value);
 }
 
 function saveData(list){
-    localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(list));
+    localStorage.setItem(LOCALSTORAGE_LIST_KEY, JSON.stringify(list));
 }
 
 function addNew(name, episode, link, nextLink){

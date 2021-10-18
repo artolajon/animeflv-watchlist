@@ -9,6 +9,7 @@
           "css": ["nav.css"],
           "js": [
             "constants.js",
+            "language.js",
             "localStorageService.js", 
             "nav.js"
           ]
@@ -21,5 +22,6 @@
             "addToNav.js"
           ]
         }
-    ]
+    ],
+    "web_accessible_resources": ["/images/translate.png"]
 }
