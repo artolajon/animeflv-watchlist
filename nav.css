@@ -76,11 +76,11 @@
 #primary_nav_wrap img{
 	height: 20px;
 }
-#translate-button{
+.menu-button{
 	float: right !important;
 }
 
-#translate-button li
+#menu-button li
 {
 	width:auto !important;
 }
@@ -88,4 +88,8 @@
 #primary_nav_wrap ul a
 {
 	text-transform: capitalize;
+}
+
+#actual_user_id{
+	margin-right: 10px;
 }

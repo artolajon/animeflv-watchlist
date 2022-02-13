@@ -20,17 +20,23 @@ const translations = {
     "EUS":{
         next: 'Hurrena',
         delete: 'Borrau',
-        lastViewed: 'Atzena ikusittekuk'
+        lastViewed: 'Atzena ikusittekuk',
+        addUser: 'Berrixe',
+        name: 'Izena'
     },
     "ESP":{
         next: 'Proximo',
         delete: 'Eliminar',
-        lastViewed: 'Visto por última vez'
+        lastViewed: 'Visto por última vez',
+        addUser: 'Nuevo',
+        name: 'Nombre'
     },
     "ENG":{
         next: 'Next',
         delete: 'Delete',
-        lastViewed: 'Last viewed'
+        lastViewed: 'Last viewed',
+        addUser: 'New',
+        name: 'Name'
     },
 }
 

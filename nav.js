@@ -63,13 +63,81 @@ function createTranslationsButton(){
 
     let li = document.createElement("li");
     li.id = "translate-button";
+    li.classList.add("menu-button");
     li.append(a);
     li.append(opciones);
 
     return li;
 }
 
-function createRow(animeList){
+function createUserOptions(users){
+    const ul = document.createElement("ul");
+    
+
+    users.forEach(user=>{
+        
+        ul.append(createUserButton(user));
+    })
+
+    ul.append(createAddUserButton());
+    ul.append(deleteActualUserButton());
+    return ul;
+}
+
+function createUserButton(user){
+    let a = document.createElement("a");
+    a.textContent = user;
+
+    let li = document.createElement("li");
+    li.onclick = () => { changeUser(user); location.reload()};
+    li.append(a);
+    return li;
+}
+
+function createAddUserButton(){
+    let a = document.createElement("a");
+    a.textContent = translate('addUser');;
+
+    let li = document.createElement("li");
+    li.onclick = () => { addUser(); location.reload()};
+    li.append(a);
+    return li;
+}
+
+function deleteActualUserButton(){
+    let a = document.createElement("a");
+    a.textContent = translate('delete');;
+
+    let li = document.createElement("li");
+    li.onclick = () => { deleteUser(); location.reload()};
+    li.append(a);
+    return li;
+}
+
+function createUsersButton(users){
+    let span = document.createElement("span");
+    span.textContent = getActualUser();
+    span.id = ACTUAL_USER_ID;
+
+    let img = document.createElement("img");
+    img.src = chrome.extension.getURL("/images/user.png");
+
+    let a = document.createElement("a");
+    a.append(span);
+    a.append(img);
+
+    let opciones = createUserOptions(users);
+
+    let li = document.createElement("li");
+    li.id = "user-button";
+    li.classList.add("menu-button");
+    li.append(a);
+    li.append(opciones);
+
+    return li;
+}
+
+function createRow(animeList, userList){
     
 
     const ul = document.createElement("ul");
@@ -93,7 +161,9 @@ function createRow(animeList){
         ul.append(li);
     });
 
-
+    let userLi = createUsersButton(userList);
+    ul.append(userLi);
+    
     let translationsLi = createTranslationsButton();
     ul.append(translationsLi);
 
@@ -110,8 +180,9 @@ function addRowToBody(row){
 
 function showRow(){
     resetNav();
-    let animeList = getData();
-    let row = createRow(animeList);
+    let animeList = getAnimeData();
+    let userList = getUserData();
+    let row = createRow(animeList, userList);
     addRowToBody(row);
 }
 
