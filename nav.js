@@ -54,7 +54,7 @@ function createLangButton(lang){
 
 function createTranslationsButton(){
     let img = document.createElement("img");
-    img.src = chrome.extension.getURL("/images/translate.png");
+    img.src = `chrome-extension://${chrome.runtime.id}/images/translate.png`;
 
     let a = document.createElement("a");
     a.append(img);
@@ -120,7 +120,7 @@ function createUsersButton(users){
     span.id = ACTUAL_USER_ID;
 
     let img = document.createElement("img");
-    img.src = chrome.extension.getURL("/images/user.png");
+    img.src = `chrome-extension://${chrome.runtime.id}/images/user.png`;
 
     let a = document.createElement("a");
     a.append(span);
