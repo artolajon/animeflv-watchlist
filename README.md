@@ -16,10 +16,8 @@ Now you can
 > For "security", There is a small timeout of 5 mins before the anime is added or updated
 ## Installation 
 
-1. Just download the [released zip](https://github.com/artolajon/animeflv-watchlist/releases/tag/v1.3).
-1. Extract it somewhere in your pc
-1. (Using developer mode in chrome) Add the extension by pointing to its directory.
-1. Done :)
-
-Now you just need to access to the [website](https://www3.animeflv.net/)
-
+1. Download a zip file with the extension. 
+1. Extract the contents of the zip file. 
+1. Open the extension page in google chrome. 
+1. Activate developer mode. 
+1. Load unpacked extension.
