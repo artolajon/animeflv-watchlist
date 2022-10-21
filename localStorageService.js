@@ -15,10 +15,11 @@ function saveData(list){
     localStorage.setItem(getActualUser() + LOCALSTORAGE_LIST_KEY, JSON.stringify(list));
 }
 
-function addNew(name, episode, link, nextLink){
+function addNew(id, name, episode, link, nextLink){
     if (name && link){
         let animeList = getAnimeData();
         animeList.unshift({
+            id:id,
             name: name,
             episode: episode,
             link: link,

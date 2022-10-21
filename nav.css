@@ -6,13 +6,13 @@
 	float:left;
 	margin:0;
 	padding:0;
-	background-color: white;
+	background-color: #1e1e1e;
 }
 
 #primary_nav_wrap ul a
 {
 	display:block;
-	color:#333;
+	color: white;
 	text-decoration:none;
 	font-weight:700;
 	font-size:12px;
@@ -31,7 +31,7 @@
 
 #primary_nav_wrap ul li:hover
 {
-	background:#cfcfcf
+	background:#313131;
 }
 
 #primary_nav_wrap ul ul
@@ -40,7 +40,7 @@
 	position:absolute;
 	top:100%;
 	left:0;
-	background:#fff;
+	background-color: #1e1e1e;
 	padding:0
 }
 
@@ -69,11 +69,11 @@
 }
 
 #primary_nav_wrap .normal{
-	color: black;
+	color: white;
 	padding: 5px 10px  !important;
 	cursor: pointer;
 }
-#primary_nav_wrap img{
+.menu-button img{
 	height: 20px;
 }
 .menu-button{
@@ -92,4 +92,10 @@
 
 #actual_user_id{
 	margin-right: 10px;
+}
+
+img.cover{
+	margin: 1rem;
+    border-radius: 15px;
+	width: 150px;
 }

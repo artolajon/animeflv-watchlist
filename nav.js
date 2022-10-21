@@ -148,6 +148,11 @@ function createRow(animeList, userList){
 
     animeList.forEach((anime, index) => {
 
+        
+        let img = document.createElement("img");
+        img.classList.add("cover");
+        img.src = `/uploads/animes/covers/${anime.id??0}.jpg`;
+
         let a = document.createElement("a");
         a.href = DOMAIN + anime.link;
         a.textContent = `${anime.name} - ${anime.episode}`;
@@ -155,6 +160,10 @@ function createRow(animeList, userList){
         let options = createOptions(index, anime.nextLink, anime.episode);
 
         let li = document.createElement("li");
+        if (window.location.pathname == "/"){
+            li.append(img);
+        }
+            
         li.append(a);
         li.append(options);
 

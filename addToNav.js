@@ -14,13 +14,12 @@ let nextLink = anime+"-"+(episode+1);
 
 anime = anime.replaceAll("-", " ");
 
-
 setTimeout(()=>{
     //exists?
     deleteIfExists(anime);
         
     //add new
-    addNew(anime, episode, urlWithoutDomain, nextLink);
+    addNew((anime_id ?? 0), anime, episode, urlWithoutDomain, nextLink);
 }, TIMEOUT_BEFORE_SAVING);
 
 
