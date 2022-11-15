@@ -22,21 +22,24 @@ const translations = {
         delete: 'Borrau',
         lastViewed: 'Atzena ikusittekuk',
         addUser: 'Berrixe',
-        name: 'Izena'
+        name: 'Izena',
+        addnew: 'Gehitu'
     },
     "ESP":{
         next: 'Proximo',
         delete: 'Eliminar',
         lastViewed: 'Visto por última vez',
         addUser: 'Nuevo',
-        name: 'Nombre'
+        name: 'Nombre',
+        addnew: 'Añadir'
     },
     "ENG":{
         next: 'Next',
         delete: 'Delete',
         lastViewed: 'Last viewed',
         addUser: 'New',
-        name: 'Name'
+        name: 'Name',
+        addnew: 'Add'
     },
 }
 

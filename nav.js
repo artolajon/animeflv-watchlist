@@ -169,6 +169,13 @@ function createRow(animeList, userList){
 
         ul.append(li);
     });
+    if (window.location.pathname.startsWith("/ver/")){
+        let li = document.createElement("li");
+        li.textContent =translate('addnew');
+        li.classList.add("normal");
+        li.addEventListener("click", ()=>addNewFromURL())
+        ul.append(li);
+    }
 
     let userLi = createUsersButton(userList);
     ul.append(userLi);
@@ -199,8 +206,6 @@ function resetNav(){
     let nav = document.getElementById(HTML_NAV_ID);
     if (nav) nav.remove();
 }
-
-
 
 
 showRow();

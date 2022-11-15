@@ -80,3 +80,39 @@ function deleteUser(){
 function saveUserData(list){
     localStorage.setItem(LOCALSTORAGE_USERS_KEY, JSON.stringify(list));
 }
+
+if (window.location.pathname.startsWith("/ver/")){
+    let div = document.createElement("div");
+    div.innerHTML='<button style="display:none" id="animeIdButton" onclick="this.innerText=anime_id">placeholder</button>';
+    document.body.appendChild(div);
+    
+    let button = document.getElementById("animeIdButton")
+    button.click();
+    ANIME_ID = button.textContent;
+}
+
+function addNewFromURL(){
+    //get url
+    let url = window.location.href;
+
+    //remove domain
+    let urlWithoutDomain = url.substr(DOMAIN.length);
+
+    //separate episode and anime
+    let index = urlWithoutDomain.lastIndexOf("-");
+
+    anime = urlWithoutDomain.substr(0, index);
+
+    let episode = parseInt(urlWithoutDomain.substr(index+1));
+    let nextLink = anime+"-"+(episode+1); 
+
+    anime = anime.replaceAll("-", " ");
+
+    //exists?
+    deleteIfExists(anime);
+
+    //add new
+    addNew((ANIME_ID ?? ""), anime, episode, urlWithoutDomain, nextLink);
+
+
+}
