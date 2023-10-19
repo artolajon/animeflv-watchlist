@@ -2,7 +2,7 @@
     "name": "animeflv-watchlist", 
     "description": "Animeflv-n atzena ikusitteko serien linke jartzeik",
     "manifest_version": 3,
-    "version": "1.5", 
+    "version": "1.6", 
     "content_scripts": [
         {
           "matches": ["https://www3.animeflv.net/*"],
